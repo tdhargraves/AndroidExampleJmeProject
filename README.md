@@ -2,7 +2,7 @@
 
 I created this project to help anyone trying to get a JME game running on Android. 
 It can be considered a 'starter' project, written by an Android dummy.
-It arose while I was trying to isolate a bug in Minie witk @sgold.
+It arose while I was trying to isolate a bug in Minie with @sgold.
 
 The android project contains 2 models: ninja and puppet.
 Ninja raises his sword and puppet tries to grab it...

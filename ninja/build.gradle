@@ -1,0 +1,67 @@
+apply plugin: "java"
+apply plugin: "application"
+application {
+    applicationDefaultJvmArgs = ["-Xmx2048m -Dfile.encoding=UTF-8 -XX:+UseG1GC -XX:MaxGCPauseMillis=10 -Xcheck:jni -verbose:gc"]
+}
+sourceCompatibility = 1.8
+mainClassName = "com.tharg.ninja.DesktopLauncher"
+
+repositories {
+	mavenLocal()
+    mavenCentral()
+}
+
+project.ext {
+  jmeVer = '3.5.2-stable'
+    lemurprotoVersion = "[1.12,)"
+    lombokVersion = "1.18.20"
+    sio2Version = "[1.6,)"
+    slf4jsimpleVersion = "1.7.30"
+}
+
+project(":assets") {
+    apply plugin: "java"
+
+    buildDir = rootProject.file("build/assets")
+
+    sourceSets {
+        main {
+            resources {
+                srcDir '.'
+            }
+        }
+    }
+}
+
+dependencies {
+//    implementation "com.github.stephengold:Minie:7.0.1-SNAPSHOT"
+//    implementation "org.jmonkeyengine:jme3-core:3.6.0-SNAPSHOT"
+
+    implementation "com.github.stephengold:Minie:7.2.0"
+    implementation "org.jmonkeyengine:jme3-core:3.5.2-stable"
+
+
+    implementation files('lemur-1.16.0.jar')
+    implementation files('lemur-proto-1.13.0.jar')
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+	// For simsilica - Standard utility stuff
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'org.slf4j:slf4j-api:2.0.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.0'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.18.0'
+//	implementation 'org.codehaus.groovy:groovy-all:3.0.12'
+
+//    runtimeOnly "org.jmonkeyengine:jme3-plugins:3.6.0-SNAPSHOT"
+    runtimeOnly "org.jmonkeyengine:jme3-plugins:3.5.2-stable"
+    runtimeOnly 'org.jmonkeyengine:jme3-testdata:3.1.0-stable' // for MonkeyHead, Ninja, and Oto
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': "$mainClassName"
+    }
+}
+
+
+java.targetCompatibility = JavaVersion.VERSION_1_8

@@ -1,0 +1,130 @@
+mipmap-hdpi
+ic_launcher.png				96 DPI 72x72 Pixels
+ic_launcher_foreground.png	96 DPI 162x162 Pixels
+ic_launcher_round.png		96 DPI 72x72 Pixels
+
+mipmap-ldpi
+ic_launcher.png				96 DPI 36x36 Pixels
+
+mipmap-mdpi
+ic_launcher.png				96 DPI 48x48 Pixels
+ic_launcher_foreground.png	96 DPI 108x108 Pixels
+ic_launcher_round.png		96 DPI 48x48 Pixels
+
+mipmap-xhdpi
+ic_launcher.png				96 DPI 96x96 Pixels
+ic_launcher_foreground.png	96 DPI 216x216 Pixels
+ic_launcher_round.png		96 DPI 96x96 Pixels
+
+mipmap-xxhdpi
+ic_launcher.png				96 DPI 144x144 Pixels
+ic_launcher_foreground.png	96 DPI 324x324 Pixels
+ic_launcher_round.png		96 DPI 144x144 Pixels
+
+mipmap-xxxhdpi
+ic_launcher.png				96 DPI 192x192 Pixels
+ic_launcher_foreground.png	96 DPI 432x432 Pixels
+ic_launcher_round.png		96 DPI 192x192 Pixels
+
+
+ic_launcher_web.png			96 DPI 512x512 Pixels
+playstore-icon.png			96 DPI 512x512 Pixels
+
+https://easyappicon.com/
+
+Add the following code in your AndroidManifest.xml within the app folder.
+
+<application
+    …
+    android:icon="@mipmap/ic_launcher"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    …>
+</application>
+
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background" />
+    <foreground android:drawable="@mipmap/ic_launcher_foreground" />
+</adaptive-icon>
+
+Android Icon Size (Legacy and Adaptive Icon)
+ic_launcher.png
+
+Density
+
+Pixel
+
+ldpi (0.75x)
+
+36 x 36 px
+
+mdpi (baseline)
+
+48 x 48 px
+
+hdpi (1.5x)
+
+72 x 72 px
+
+xhdpi (2x)
+
+96 x 96 px
+
+xxhdpi (3x)
+
+144 x 144 px
+
+xxxhdpi (4x)
+
+192 x 192 px
+
+ic_launcher_round.png
+
+Density
+
+Pixel
+
+mdpi (baseline)
+
+48 x 48 px
+
+hdpi (1.5x)
+
+72 x 72 px
+
+xhdpi (2x)
+
+96 x 96 px
+
+xxhdpi (3x)
+
+144 x 144 px
+
+xxxhdpi (4x)
+
+192 x 192 px
+
+ic_launcher_foreground
+
+Density
+
+Pixel
+
+mdpi (baseline)
+
+108 x 108 px
+
+hdpi (1.5x)
+
+162 x 162 px
+
+xhdpi (2x)
+
+216 x 216 px
+
+xxhdpi (3x)
+
+324 x 324 px
+
+xxxhdpi (4x)
+
+432 x 432 px

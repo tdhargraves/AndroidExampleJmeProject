@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceCompatibility = 1.8
+//mainClassName = "com.tharg.jme.utilities.createj3o.CreateJ3o"
+
+repositories {
+	mavenLocal()
+    mavenCentral()
+}
+
+project.ext {
+  jmeVer = '3.5.2-stable'
+}
+
+project(":assets") {
+    apply plugin: "java"
+
+    buildDir = rootProject.file("build/assets")
+
+    sourceSets {
+        main {
+            resources {
+                srcDir '.'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation files('Wes-0.7.2.jar')
+    implementation "org.jmonkeyengine:jme3-core:3.6.0-SNAPSHOT"
+}
+

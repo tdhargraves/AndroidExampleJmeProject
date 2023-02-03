@@ -1,0 +1,62 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.1'
+//        classpath 'com.android.tools.build:gradle:7.2.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+def jme3 = [v: '3.5.2-stable', g: 'org.jmonkeyengine']
+
+
+project(":app") {
+    apply plugin: "android"
+    dependencies {
+        implementation project(":ninja")
+        implementation "org.jmonkeyengine:jme3-core:3.5.2-stable"
+        implementation "org.jmonkeyengine:jme3-android:3.5.2-stable"
+        implementation "org.jmonkeyengine:jme3-android-native:3.5.2-stable"
+    }
+}
+
+project(":ninja") {
+    apply plugin: "java"
+    dependencies {
+        implementation project(":utilities")
+    }
+}
+
+project(":desktop") {
+    apply plugin: "java"
+    dependencies {
+        implementation project(":ninja")
+//        implementation "org.jmonkeyengine:jme3-core:3.6.0-SNAPSHOT"
+//        implementation "org.jmonkeyengine:jme3-desktop:3.6.0-SNAPSHOT"
+//        implementation "org.jmonkeyengine:jme3-lwjgl:3.5.2-stable"
+//        implementation "com.github.stephengold:Minie:7.0.1-SNAPSHOT"
+        implementation "org.jmonkeyengine:jme3-core:3.5.2-stable"
+        implementation "org.jmonkeyengine:jme3-desktop:3.5.2-stable"
+        implementation "org.jmonkeyengine:jme3-lwjgl:3.5.2-stable"
+        implementation "com.github.stephengold:Minie:7.2.0"
+    }
+}

@@ -4,7 +4,6 @@ plugins {
 }
 
 sourceCompatibility = 1.8
-//mainClassName = "com.tharg.jme.utilities.createj3o.CreateJ3o"
 
 repositories {
 	mavenLocal()
@@ -30,7 +29,7 @@ project(":assets") {
 }
 
 dependencies {
-    implementation files('Wes-0.7.2.jar')
     implementation "org.jmonkeyengine:jme3-core:3.6.0-SNAPSHOT"
 }
 
+java.targetCompatibility = JavaVersion.VERSION_1_8
